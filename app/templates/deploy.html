@@ -1,0 +1,26 @@
+<h3 style="display:inline-block; margin:0">测试模块：</h3>{{ repo_name }}
+<br />
+<h3 style="display:inline-block; margin:0">提测类型：</h3>{{ deploy_type }}
+<br />
+<h3 style="display:inline-block; margin:0">版本号：</h3>{{ commit_id }}
+<br />
+<h3 style="display:inline-block; margin:0">提测人：</h3>{{ name }}
+{% if introduce %}
+<h2>版本概述</h2>
+<p>{{ introduce }}</p>
+{% endif %}
+
+{% if functions %}
+<h2>测试功能点</h2>
+{% for function in functions %}
+<h3>{{ function.name }}</h3>
+<p>{{ function.content }}</p>
+{% endfor %}
+{% endif %}
+
+{% if result %}
+<h2>部署结果（成功/失败）</h2>
+{% for line in result.split('\n\n') %}
+<pre>{{ line }}</pre>
+{% endfor %}
+{% endif %}

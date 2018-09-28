@@ -1,0 +1,6 @@
+flask
+flask-mail
+ansible
+gunicorn
+supervisor
+requests

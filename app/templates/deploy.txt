@@ -1,0 +1,8 @@
+{% if functions %}
+{% for function in functions %}
+{{ function }}
+{% endfor %}
+{% endif %}
+{% for line in outputs.split('\n\n') %}
+{{ line.decode('utf-8') }}
+{% endfor %}
